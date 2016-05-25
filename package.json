@@ -4,7 +4,7 @@
   "description": "practice for dev",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon proxy-server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
