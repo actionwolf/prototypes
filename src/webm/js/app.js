@@ -29,14 +29,14 @@ $(function(){
 });
 
 function render(){
-	_video = new Whammy.Video(36);
+	_video = new Whammy.Video(36, 1);
 
 	$('div.box')
 		.css({
-			'transform': 'translate(0px, 0px) rotate(0deg) skewX(0deg)'
+			'transform': 'translate(0px, 0px) rotate(0deg) skewX(30deg)'
 		})
 		.animate({
-			'transform': 'translateX(260px, 500px) rotate(30deg) skewX(180deg)'
+			'transform': 'translateX(260px, 500px) rotate(30deg) skewX(0deg)'
 		},
 		{
 			duration: 1500,
@@ -55,7 +55,11 @@ function render(){
 function renderVideo(callback){
 	Html2Canvas($('div#container-animation'), {
 		onrendered: function(canvas){
-			_video.add(canvas.getContext('2d'));
+			var ctx = canvas.getContext('2d');
+			ctx.save();
+			ctx.restore();
+
+			_video.add(ctx);
 
 			callback && callback();
 		},
@@ -67,5 +71,5 @@ function renderVideo(callback){
 function completeVideo(){
 	var url = window.URL.createObjectURL(_video.compile());
 
-	$('video').attr('src', url);
+	$('video#preview').attr('src', url);
 };

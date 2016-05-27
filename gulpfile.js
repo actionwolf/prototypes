@@ -21,6 +21,16 @@ gulp.task('move:static:data', function(){
 		.pipe(gulp.dest('dist/data'));
 });
 
+gulp.task('move:static:image', function(){
+	return gulp.src('image/**/*.*')
+		.pipe(gulp.dest('dist/image'));
+});
+
+gulp.task('move:static:video', function(){
+	return gulp.src('video/**/*.*')
+		.pipe(gulp.dest('dist/video'));
+});
+
 gulp.task('build:js', function(){
 	return gulp.src('src/**/*.js')
 		.pipe(browserify({
@@ -30,7 +40,7 @@ gulp.task('build:js', function(){
 		.pipe(gulp.dest('dist/build'));
 });
 
-gulp.task('build', ['move:static:html', 'move:static:data', 'build:js'], function(){
+gulp.task('build', ['move:static:html', 'move:static:data', 'move:static:image', 'move:static:video', 'build:js'], function(){
 	return gulp.src('src/**/*.html')
 		.pipe(gulp.dest('dist/build/'));
 });
