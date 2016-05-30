@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[Prototype] Clone Video</title>
+	<style>
+		div.container {width: 500px; height: 300px;}
+		div.container-video video {width: 100%; height: 100%;}
+	</style>
+</head>
+<body>
+<h1>Clone Video</h1>
+<p>
+	use Canvas drawImage method
+</p>
+<h3>Original-Video</h3>
+<div class="container container-video">
+	<video class="origin-video" src="/video/IMG_4722.mp4" preload="auto" controls></video>
+</div>
+
+<h3>Canvas</h3>
+<div class="container container-canvas">
+	<canvas width="500" height="300"></canvas>
+</div>
+
+<h3>Clone-Video</h3>
+<div class="container container-video">
+	<video class="clone-video" controls></video>
+</div>
+
+<script src="app.video.js"></script>
+</body>
+</html>
