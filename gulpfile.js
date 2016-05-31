@@ -34,7 +34,7 @@ gulp.task('move:static', ['move:static:data', 'move:static:image', 'move:static:
  *
  **********************************************************************************************************************/
 gulp.task('build:webm:js', function(){
-	return gulp.src('src/webm/app.js')
+	return gulp.src('src/view/webm/app.webm.js')
 		.pipe(browserify({
 			debug: true
 		}))
@@ -42,7 +42,7 @@ gulp.task('build:webm:js', function(){
 });
 
 gulp.task('build:webm', ['move:static', 'build:webm:js'], function(){
-	return gulp.src('src/webm/index.html')
+	return gulp.src('src/view/webm/webm.html')
 		.pipe(gulp.dest('dist/build/webm/'));
 });
 
@@ -52,7 +52,7 @@ gulp.task('build:webm', ['move:static', 'build:webm:js'], function(){
  *
  **********************************************************************************************************************/
 gulp.task('build:canvas:js', function(){
-	return gulp.src('src/canvas/app.video.js')
+	return gulp.src('src/view/canvas/app.video.js')
 		.pipe(browserify({
 			debug: true
 		}))
@@ -60,6 +60,6 @@ gulp.task('build:canvas:js', function(){
 });
 
 gulp.task('build:canvas', ['move:static', 'build:canvas:js'], function(){
-	return gulp.src('src/canvas/**.html')
+	return gulp.src('src/view/canvas/**.html')
 		.pipe(gulp.dest('dist/build/canvas'));
 });

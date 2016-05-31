@@ -1,12 +1,12 @@
 global.jQuery = global.$ = require('jquery');
 global._ = require('underscore');
 
-require('../plugin/jquery.transform2d.umd.js');
-require('../plugin/jquery.transform3d.umd.js');
+require('../../plugin/jquery.transform2d.umd.js');
+require('../../plugin/jquery.transform3d.umd.js');
 require('jquery.easing');
 
 var Html2Canvas = require('html2canvas');
-var Whammy = require('../util/Whammy.js');
+var Whammy = require('../../util/Whammy.js');
 
 var _video = null;
 var _rectangle = {

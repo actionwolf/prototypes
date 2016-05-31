@@ -1,6 +1,6 @@
 var $ = require('jquery');
 var _ = require('underscore');
-var Whammy = require('../util/Whammy.js');
+var Whammy = require('../../util/Whammy.js');
 
 $(function(){
 	var _video = null;
