@@ -48,11 +48,11 @@ gulp.task('build:webm', ['move:static', 'build:webm:js'], function(){
 
 /***********************************************************************************************************************
  *
- * [CANVAS-VIDEO]
+ * [CANVAS]
  *
  **********************************************************************************************************************/
 gulp.task('build:canvas:js', function(){
-	return gulp.src('src/view/canvas/app.video.js')
+	return gulp.src(['src/view/canvas/app.video.js', 'src/view/canvas/app.ocanvas.js'])
 		.pipe(browserify({
 			debug: true
 		}))
