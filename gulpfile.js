@@ -52,7 +52,11 @@ gulp.task('build:webm', ['move:static', 'build:webm:js'], function(){
  *
  **********************************************************************************************************************/
 gulp.task('build:canvas:js', function(){
-	return gulp.src(['src/view/canvas/app.video.js', 'src/view/canvas/app.ocanvas.js'])
+	return gulp.src([
+		'src/view/canvas/app.video.js',
+		'src/view/canvas/app.ocanvas.js',
+		'src/view/canvas/app.fabric.js'
+		])
 		.pipe(browserify({
 			debug: true
 		}))
@@ -62,4 +66,22 @@ gulp.task('build:canvas:js', function(){
 gulp.task('build:canvas', ['move:static', 'build:canvas:js'], function(){
 	return gulp.src('src/view/canvas/**.html')
 		.pipe(gulp.dest('dist/build/canvas'));
+});
+
+/***********************************************************************************************************************
+ *
+ * [VIDEO-SNAP]
+ *
+ **********************************************************************************************************************/
+gulp.task('build:videosnap:js', function(){
+	return gulp.src('src/view/videoSnap/app.video-snap.js')
+		.pipe(browserify({
+			debug: true
+		}))
+		.pipe(gulp.dest('dist/build/videoSnap'));
+});
+
+gulp.task('build:videosnap', ['move:static', 'build:videosnap:js'], function(){
+	return gulp.src('src/view/videoSnap/**.html')
+		.pipe(gulp.dest('dist/build/videoSnap'));
 });

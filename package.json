@@ -55,6 +55,7 @@
     "jquery.easing": "^1.3.2",
     "jquery.transit": "^0.9.12",
     "ocanvas": "^2.8.4",
+    "fabric": "^1.6.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "reactify": "^1.1.1",
